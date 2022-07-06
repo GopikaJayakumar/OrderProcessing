@@ -1,0 +1,94 @@
+{
+  "info": {
+    "_postman_id": "372c17a0-d518-40c9-8a2b-98827d9a85f3",
+    "name": "Order-Processing Assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST - create order",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "customerId",
+            "value": "1234",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"item_title\": \"Macbook Pro - Silver\",\n    \"item_id\": \"4567\",\n    \"purchased_quantity\": 2,\n    \"price\": \"$2500\",\n     \"first_name\": \"test\",\n    \"last_name\": \"test\",\n   \"phone_number\": \"1234567890\",\n    \"shipping_address\": \"address\",\n   \"billing_address\": \"address\",\n     \"retailer_name\": \"Retailer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - order status by order id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/orders/getStatus/b80377d0-fce8-11ec-adde-85df955d0612",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "getStatus",
+            "b80377d0-fce8-11ec-adde-85df955d0612"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET order by orderId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/orders/b80377d0-fce8-11ec-adde-85df955d0612",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "b80377d0-fce8-11ec-adde-85df955d0612"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
